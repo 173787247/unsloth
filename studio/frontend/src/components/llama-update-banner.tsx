@@ -309,7 +309,11 @@ export function LlamaUpdateBanner({
               )}
             </p>
             <p className="mt-1 text-ui-11 text-muted-foreground/70">
-              {sizeLabel ? `${sizeLabel} download · ` : ""}
+              {sizeLabel
+                ? `${sizeLabel} download · `
+                : status?.source_refresh
+                  ? "Rebuilds llama.cpp from source · "
+                  : ""}
               {versionChanged && backendChange
                 ? `${backendChange} backend · `
                 : ""}
