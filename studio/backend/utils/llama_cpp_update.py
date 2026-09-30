@@ -1549,6 +1549,8 @@ def _start_llama_job(backend_request: Optional[str] = None) -> dict:
                             llama_backend = llama_spec.get("llama_backend"),
                             rocm_gfx = llama_spec.get("rocm_gfx"),
                             backend_request = llama_spec.get("backend_request"),
+                            source_refresh = bool(llama_spec.get("source_refresh")),
+                            desired_ref = llama_spec.get("desired_ref"),
                             migration_target = llama_spec.get("migration_target"),
                         )
                     )
